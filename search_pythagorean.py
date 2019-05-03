@@ -2,7 +2,7 @@ import math
 import pprint
 
 def search_pythagorean():
-	#ピタゴラス数の中で a,b,cの最大公約数が 1のものは，ある正の整数 m,nを用いて a=m2−n2,b=2mn,c=m2+n2
+	#ピタゴラス数の中で a,b,cの最大公約数が 1のものは，ある正の整数 m,nを用いて a=^m2−n^2,b=2mn,c=m^2+n^2
 	cnt = 0
 	primal = 1
 	second = 2
@@ -12,12 +12,12 @@ def search_pythagorean():
 			divisor = primal
 			mod = 1
 			while mod != 0: #ユークリッドの互除法
-				#最大公約数gcdを求める
+				#最大公約数gcd(greatest common divisor)を求める
 				gcd = second
 				mod = gcd % divisor
 				gcd = divisor
 				divisor = mod
-			if gcd == 1: #最大公約数が1、すなわち互いに素
+			if gcd == 1: #gcdが1、すなわち互いに素
 				if (second - primal) % 2 == 1: #m-nが奇数
 					a = second**2 - primal**2
 					b = 2 * second * primal
