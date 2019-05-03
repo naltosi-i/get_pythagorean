@@ -8,25 +8,27 @@ def search_pythagorean():
 	second = 2
 	pythagorean_triple = {}
 	while cnt < 20:
-		divisor = primal
-		mod = 1
-		while mod != 0: #ユークリッドの互除法
-			#最大公約数gcdを求める
-			gcd = second
-			mod = gcd % divisor
-			gcd = divisor
-			divisor = mod
-		if gcd == 1: #最大公約数が1、すなわち互いに素
-			if (second - primal) % 2 == 1: #m-nが奇数
-				a = second**2 - primal**2
-				b = 2 * second * primal
-				c = second**2 + primal**2
+		while primal < second:
+			divisor = primal
+			mod = 1
+			while mod != 0: #ユークリッドの互除法
+				#最大公約数gcdを求める
+				gcd = second
+				mod = gcd % divisor
+				gcd = divisor
+				divisor = mod
+			if gcd == 1: #最大公約数が1、すなわち互いに素
+				if (second - primal) % 2 == 1: #m-nが奇数
+					a = second**2 - primal**2
+					b = 2 * second * primal
+					c = second**2 + primal**2
 				
-				pythagorean_triple[cnt] = [a,b,c]
+					pythagorean_triple[cnt] = [a,b,c]
 				
-				cnt += 1
+					cnt += 1
+			primal += 1
 		second += 1
-		primal += 1
+		
 
 	return pythagorean_triple
 			
