@@ -23,7 +23,7 @@ def search_pythagorean():
 					b = 2 * second * primal
 					c = second**2 + primal**2
 				
-					pythagorean_triple[cnt] = [a,b,c]
+					pythagorean_triple[cnt] = [a,b,c, ['m={}'.format(second), 'n={}'.format(primal)]]
 				
 					cnt += 1
 
