@@ -26,7 +26,10 @@ def search_pythagorean():
 					pythagorean_triple[cnt] = [a,b,c]
 				
 					cnt += 1
+
 			primal += 1
+		
+		primal = 1
 		second += 1
 		
 
