@@ -7,7 +7,7 @@ def search_pythagorean():
 	primal = 1
 	second = 2
 	pythagorean_triple = {}
-	while cnt < 20:
+	while cnt < 100:
 		while primal < second:
 			divisor = primal
 			mod = 1
