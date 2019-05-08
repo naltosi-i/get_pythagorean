@@ -4,33 +4,33 @@ import pprint
 def search_pythagorean():
 	#ピタゴラス数の中で a,b,cの最大公約数が 1のものは，ある正の整数 m,nを用いて a=^m2−n^2,b=2mn,c=m^2+n^2
 	cnt = 0
-	primal = 1
-	second = 2
+	n = 1
+	m = 2
 	pythagorean_triple = {}
-	while cnt < 100:
-		while primal < second:
-			divisor = primal
+	while cnt < 20:
+		while n < m:
+			divisor = n
 			mod = 1
 			while mod != 0: #ユークリッドの互除法
 				#最大公約数gcd(greatest common divisor)を求める
-				gcd = second
+				gcd = m
 				mod = gcd % divisor
 				gcd = divisor
 				divisor = mod
 			if gcd == 1: #gcdが1、すなわち互いに素
-				if (second - primal) % 2 == 1: #m-nが奇数
-					a = second**2 - primal**2
-					b = 2 * second * primal
-					c = second**2 + primal**2
+				if (m - n) % 2 == 1: #m-nが奇数
+					a = m**2 - n**2
+					b = 2 * m * n
+					c = m**2 + n**2
 				
-					pythagorean_triple[cnt] = [a,b,c, ['m={}'.format(second), 'n={}'.format(primal)]]
+					pythagorean_triple[cnt] = [a,b,c, ['m={}'.format(m), 'n={}'.format(n)]]
 				
 					cnt += 1
 
-			primal += 1
+			n += 1
 		
-		primal = 1
-		second += 1
+		n = 1
+		m += 1
 		
 
 	return pythagorean_triple
