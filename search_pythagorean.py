@@ -9,11 +9,11 @@ def search_pythagorean():
 	pythagorean_triple = {}
 	while cnt < 20:
 		while n < m:
+			gcd = m
 			divisor = n
-			mod = 1
+			mod = gcd % divisor
 			while mod != 0: #ユークリッドの互除法
 				#最大公約数gcd(greatest common divisor)を求める
-				gcd = m
 				mod = gcd % divisor
 				gcd = divisor
 				divisor = mod
