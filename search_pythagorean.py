@@ -9,11 +9,12 @@ def search_pythagorean():
 	pythagorean_triple = {}
 	while cnt < 20:
 		while n < m:
+			#ユークリッドの互除法
+			#最大公約数gcd(Great Common Divisor)を求める
 			dividend = m
 			gcd = n
 			mod = dividend % gcd
-			while mod != 0: #ユークリッドの互除法
-				#最大公約数gcd(greatest common divisor)を求める
+			while mod != 0:
 				dividend = gcd
 				gcd = mod
 				mod = dividend % gcd
